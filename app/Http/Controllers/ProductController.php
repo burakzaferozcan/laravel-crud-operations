@@ -23,6 +23,7 @@ class ProductController extends Controller
     public function create()
     {
         //
+        return view('create');
     }
 
     /**
@@ -31,6 +32,8 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         //
+        Product::create($request->all());
+        return redirect("/");
     }
 
     /**
@@ -38,7 +41,8 @@ class ProductController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $product = Product::FindOrFail($id);
+        return view('show', compact('product'));
     }
 
     /**

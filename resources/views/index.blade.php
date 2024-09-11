@@ -1,6 +1,8 @@
 @extends("layout")
 
 @section("content")
+    <br>
+    <a href="{{route('product.create')}}" class="btn btn-success" type="button">ÜRÜN EKLE</a>
     <table class="table">
         <thead>
         <tr>
@@ -20,7 +22,7 @@
                 <td>{{$product->name}}</td>
                 <td>{{$product->description}}</td>
                 <td>{{$product->price}}</td>
-                <td><a href="" class="btn btn-info">GÖSTER</a></td>
+                <td><a href="{{route('product.show',$product->id)}}" class="btn btn-info">GÖSTER</a></td>
                 <td><a href="" class="btn btn-warning">GÜNCELLE</a></td>
                 <td><a href="" class="btn btn-danger">SİL</a></td>
             </tr>
