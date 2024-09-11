@@ -64,7 +64,7 @@ class ProductController extends Controller
         $product = Product::FindOrFail($id);
         $product->update($request->all());
         return redirect("/");
-        
+
     }
 
     /**
@@ -73,5 +73,8 @@ class ProductController extends Controller
     public function destroy(string $id)
     {
         //
+        $product = Product::FindOrFail($id);
+        $product->delete();
+        return redirect("/");
     }
 }
