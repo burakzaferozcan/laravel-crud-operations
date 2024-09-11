@@ -51,6 +51,8 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         //
+        $product = Product::FindOrFail($id);
+        return view('update', compact('product'));
     }
 
     /**
@@ -59,6 +61,10 @@ class ProductController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $product = Product::FindOrFail($id);
+        $product->update($request->all());
+        return redirect("/");
+        
     }
 
     /**

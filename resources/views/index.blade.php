@@ -23,7 +23,7 @@
                 <td>{{$product->description}}</td>
                 <td>{{$product->price}}</td>
                 <td><a href="{{route('product.show',$product->id)}}" class="btn btn-info">GÖSTER</a></td>
-                <td><a href="" class="btn btn-warning">GÜNCELLE</a></td>
+                <td><a href="{{route('product.edit',$product->id)}}" class="btn btn-warning">GÜNCELLE</a></td>
                 <td><a href="" class="btn btn-danger">SİL</a></td>
             </tr>
 
